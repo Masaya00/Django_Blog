@@ -5,6 +5,15 @@
     <title>Blog</title>
 </head>
 <body>
-<h1>HelloWorld</h1>
+<h1>投稿一覧</h1>
+<ul>
+    {% for post in object_list %}
+    {% if user.is_authenticated or post.is_public %}
+    <li>{% if not post.is_public %}[下書き]{% endif %}{{ post.title }}</li>
+    {% endif %}
+    {% empty %}
+    <li>まだ投稿はありません。</li>
+    {% endfor %}
+</ul>
 </body>
 </html>

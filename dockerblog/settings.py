@@ -110,6 +110,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+# メディアファイルを管理
+MEDIA_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'media_root')
+MEDIA_URL = '/media/'
+
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATIC_DIRS = [
     os.path.join(BASE_DIR, 'static'),
